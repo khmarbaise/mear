@@ -62,11 +62,11 @@
                     <generateApplicationXml>true</generateApplicationXml>
                     <version>6</version>
                     <envEntries>
-                        <env-entry>
+                        <envEntry>
                             <env-entry-name>customProperty</env-entry-name>
                             <env-entry-type>java.lang.String</env-entry-type>
                             <env-entry-value>${custom.property}</env-entry-value>
-                        </env-entry>
+                        </envEntry>
                     </envEntries>
                     <applicationName>${custom.property}</applicationName>
                 </configuration>
