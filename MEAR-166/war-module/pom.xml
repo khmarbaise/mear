@@ -27,20 +27,14 @@ under the License.
     <version>1.0</version>
   </parent>
 
-  <artifactId>ear-module</artifactId>
-  <packaging>ear</packaging>
+  <artifactId>war-module</artifactId>
+  <packaging>war</packaging>
 
   <dependencies>
     <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
       <version>2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven.its.ear.skinnywars</groupId>
-      <artifactId>war-module</artifactId>
-      <version>1.0</version>
-      <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.apache.maven.its.ear.skinnywars</groupId>
@@ -53,16 +47,9 @@ under the License.
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-ear-plugin</artifactId>
-        <version>2.9</version>
-        <configuration>
-          <skinnyWars>true</skinnyWars>
-          <defaultLibBundleDir>lib/</defaultLibBundleDir>
-          <!--
-          <fileNameMapping>full</fileNameMapping>
-          <fileNameMapping>no-version</fileNameMapping>
-          -->
-        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.1.1</version>
       </plugin>
     </plugins>
   </build>
