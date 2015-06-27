@@ -1,0 +1,99 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] test-jar-in-ear-parent
+[INFO] test-jar-in-ear-lib
+[INFO] test-jar-in-ear-ear
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building test-jar-in-ear-parent 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ test-jar-in-ear-parent ---
+[INFO] Installing /Users/kama/ws-git/apache/mear/MEAR-216/pom.xml to /Users/kama/.m2/repository/frol/test-jar-in-ear-parent/1.0-SNAPSHOT/test-jar-in-ear-parent-1.0-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building test-jar-in-ear-lib 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The artifact junit:junit-dep:jar:4.11 has been relocated to junit:junit:jar:4.11
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ test-jar-in-ear-lib ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ test-jar-in-ear-lib ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /Users/kama/ws-git/apache/mear/MEAR-216/lib/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ test-jar-in-ear-lib ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/kama/ws-git/apache/mear/MEAR-216/lib/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ test-jar-in-ear-lib ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /Users/kama/ws-git/apache/mear/MEAR-216/lib/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ test-jar-in-ear-lib ---
+[INFO] Surefire report directory: /Users/kama/ws-git/apache/mear/MEAR-216/lib/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.5:jar (default-jar) @ test-jar-in-ear-lib ---
+[INFO] Building jar: /Users/kama/ws-git/apache/mear/MEAR-216/lib/target/test-jar-in-ear-lib-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.5:test-jar (default) @ test-jar-in-ear-lib ---
+[INFO] Building jar: /Users/kama/ws-git/apache/mear/MEAR-216/lib/target/test-jar-in-ear-lib-1.0-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ test-jar-in-ear-lib ---
+[INFO] Installing /Users/kama/ws-git/apache/mear/MEAR-216/lib/target/test-jar-in-ear-lib-1.0-SNAPSHOT.jar to /Users/kama/.m2/repository/frol/test-jar-in-ear-lib/1.0-SNAPSHOT/test-jar-in-ear-lib-1.0-SNAPSHOT.jar
+[INFO] Installing /Users/kama/ws-git/apache/mear/MEAR-216/lib/pom.xml to /Users/kama/.m2/repository/frol/test-jar-in-ear-lib/1.0-SNAPSHOT/test-jar-in-ear-lib-1.0-SNAPSHOT.pom
+[INFO] Installing /Users/kama/ws-git/apache/mear/MEAR-216/lib/target/test-jar-in-ear-lib-1.0-SNAPSHOT-tests.jar to /Users/kama/.m2/repository/frol/test-jar-in-ear-lib/1.0-SNAPSHOT/test-jar-in-ear-lib-1.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building test-jar-in-ear-ear 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-ear-plugin:2.10:generate-application-xml (default-generate-application-xml) @ test-jar-in-ear-ear ---
+[INFO] Generating application.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ test-jar-in-ear-ear ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/kama/ws-git/apache/mear/MEAR-216/ear/src/main/resources
+[INFO] 
+[INFO] --- maven-ear-plugin:2.10:ear (default-ear) @ test-jar-in-ear-ear ---
+[WARNING] The artifactId test-jar-in-ear-lib:1.0-SNAPSHOT exists more than once in the modules list.
+[WARNING]  --> frol:test-jar-in-ear-lib:jar:1.0-SNAPSHOT (jar)
+[WARNING]  --> frol:test-jar-in-ear-lib:jar:tests:1.0-SNAPSHOT (jar)
+[WARNING] HINT: This can be simply solved by using the <fileNameMapping>full</fileNameMapping>
+[INFO] Copying artifact [jar:frol:test-jar-in-ear-lib:1.0-SNAPSHOT] to [lib/frol-test-jar-in-ear-lib-1.0-SNAPSHOT.jar]
+[INFO] Copying artifact [jar:frol:test-jar-in-ear-lib:tests:1.0-SNAPSHOT] to [lib/frol-test-jar-in-ear-lib-1.0-SNAPSHOT-tests.jar]
+[INFO] Copy ear sources to /Users/kama/ws-git/apache/mear/MEAR-216/ear/target/test-jar-in-ear-ear-1.0-SNAPSHOT
+[INFO] Could not find manifest file: /Users/kama/ws-git/apache/mear/MEAR-216/ear/target/test-jar-in-ear-ear-1.0-SNAPSHOT/META-INF/MANIFEST.MF - Generating one
+[INFO] Building jar: /Users/kama/ws-git/apache/mear/MEAR-216/ear/target/test-jar-in-ear-ear-1.0-SNAPSHOT.ear
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ test-jar-in-ear-ear ---
+[INFO] Installing /Users/kama/ws-git/apache/mear/MEAR-216/ear/target/test-jar-in-ear-ear-1.0-SNAPSHOT.ear to /Users/kama/.m2/repository/frol/test-jar-in-ear-ear/1.0-SNAPSHOT/test-jar-in-ear-ear-1.0-SNAPSHOT.ear
+[INFO] Installing /Users/kama/ws-git/apache/mear/MEAR-216/ear/pom.xml to /Users/kama/.m2/repository/frol/test-jar-in-ear-ear/1.0-SNAPSHOT/test-jar-in-ear-ear-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] test-jar-in-ear-parent ............................. SUCCESS [  0.258 s]
+[INFO] test-jar-in-ear-lib ................................ SUCCESS [  1.514 s]
+[INFO] test-jar-in-ear-ear ................................ SUCCESS [  0.417 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.459 s
+[INFO] Finished at: 2015-06-27T14:59:14+02:00
+[INFO] Final Memory: 20M/206M
+[INFO] ------------------------------------------------------------------------
