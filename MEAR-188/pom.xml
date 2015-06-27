@@ -37,7 +37,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.1</version>
+                <version>1.8</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
@@ -49,7 +49,7 @@
                                 <echo>Displaying value of 'custom.property' property</echo>
                                 <echo>[custom.property] ${custom.property}</echo>
                                 <echo>Displaying value of 'env' property</echo>
-                                <echo>[env] ${env}</echo>
+                                <echo>${custom.property}='${env}'</echo>
                             </tasks>
                         </configuration>
                     </execution>
@@ -57,16 +57,16 @@
             </plugin>
             <plugin>
                 <artifactId>maven-ear-plugin</artifactId>
-                <version>2.9</version>
+                <version>2.10-SNAPSHOT</version>
                 <configuration>
                     <generateApplicationXml>true</generateApplicationXml>
                     <version>6</version>
                     <envEntries>
-                        <envEntry>
+                        <env-entry>
                             <env-entry-name>customProperty</env-entry-name>
                             <env-entry-type>java.lang.String</env-entry-type>
                             <env-entry-value>${custom.property}</env-entry-value>
-                        </envEntry>
+                        </env-entry>
                     </envEntries>
                     <applicationName>${custom.property}</applicationName>
                 </configuration>
