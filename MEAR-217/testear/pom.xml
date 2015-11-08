@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+	<parent>
+		<groupId>test.mvnear</groupId>
+		<artifactId>ear-plugin-test</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+    
+    <artifactId>testear</artifactId>
+    <packaging>ear</packaging>
+    
+    <dependencies>
+        <dependency>
+            <groupId>test.mvnear</groupId>
+            <artifactId>testwar1</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>test.mvnear</groupId>
+            <artifactId>testwar2</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>test.mvnear</groupId>
+            <artifactId>testwar1</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>test.mvnear</groupId>
+            <artifactId>testwar2</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.10</version>
+                <configuration>
+                    <version>7</version>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <skinnyWars>true</skinnyWars>
+                    <useBaseVersion>true</useBaseVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>
