@@ -33,11 +33,21 @@
           <configuration>
             <version>7</version>
             <defaultLibBundleDir>lib</defaultLibBundleDir>
-            <fileNameMapping>full</fileNameMapping>
+            <fileNameMapping>no-version</fileNameMapping>
             <useBaseVersion>true</useBaseVersion>
             <artifactTypeMappings combine.self="override">
               <artifactTypeMapping type="test-jar" mapping="jar"/>
             </artifactTypeMappings>
+            <generateApplicationXml>false</generateApplicationXml>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-ear-plugin</artifactId>
+          <configuration>
             <modules>
               <jarModule>
                 <groupId>${project.groupId}</groupId>
@@ -49,10 +59,17 @@
                 <artifactId>test-jar-in-ear-lib</artifactId>
               </jarModule>
             </modules>
-            <generateApplicationXml>false</generateApplicationXml>
           </configuration>
+          <executions>
+            <execution>
+              <id>default-generate-application-xml</id>
+              <phase>UNKNOWN</phase>
+              <goals>
+                <goal>generate-application-xml</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
-      </plugins>
-    </pluginManagement>
+    </plugins>
   </build>
 </project>
