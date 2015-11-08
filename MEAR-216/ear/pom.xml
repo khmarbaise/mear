@@ -1,46 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-	<parent>
-		<groupId>frol</groupId>
-		<artifactId>test-jar-in-ear-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</parent>
-	
-    <artifactId>test-jar-in-ear-ear</artifactId>
-	<packaging>ear</packaging>
-
-	<dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>frol</groupId>
+    <artifactId>test-jar-in-ear-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>test-jar-in-ear-ear</artifactId>
+  <packaging>ear</packaging>
+  <dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>test-jar-in-ear-lib</artifactId>
 			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>test-jar-in-ear-lib</artifactId>
-			<version>${project.version}</version>
-			<classifier>tests</classifier>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-ear-plugin</artifactId>
-				<version>2.10</version>
-				<configuration>
-					<version>7</version>
-					<defaultLibBundleDir>lib</defaultLibBundleDir>
-					<fileNameMapping>full</fileNameMapping>
-					<useBaseVersion>true</useBaseVersion>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>test-jar-in-ear-lib</artifactId>
+      <version>${project.version}</version>
+      <classifier>tests</classifier>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-ear-plugin</artifactId>
+          <version>2.10.1</version>
+          <configuration>
+            <version>7</version>
+            <defaultLibBundleDir>lib</defaultLibBundleDir>
+            <fileNameMapping>full</fileNameMapping>
+            <useBaseVersion>true</useBaseVersion>
+            <artifactTypeMappings combine.self="override">
+              <artifactTypeMapping type="test-jar" mapping="jar"/>
+            </artifactTypeMappings>
+            <modules>
+              <jarModule>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>test-jar-in-ear-lib</artifactId>
+                <classifier>tests</classifier>
+              </jarModule>
+              <jarModule>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>test-jar-in-ear-lib</artifactId>
+              </jarModule>
+            </modules>
+            <generateApplicationXml>false</generateApplicationXml>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>
